@@ -4,19 +4,18 @@ export let options = {
     insecureSkipTLSVerify: true,
     noConnectionReuse: false,
     vus: 2,
-    duration: '3s'
+    duration: '1s'
 }
 
 export default () => {
-    let certificate_id = Date.now();
-    const url = 'http://159.65.151.197:4000/blockchain/insert';
+    let date = new Date();
+    let s = date.getTime()
+    let k=s.toString()
+    const url = 'http://localhost:3000';
     const payload = JSON.stringify([{
-      "name": "Abigail",
-      "dob": "27/03/2183",
-      "reg_no": certificate_id.toString(),
-      "mother": "L. Hathaway",
-      "father": "G. Hathaway",
-      "place": "Europa"
+      "Name": "Gokul",
+      "id"  :  22323,
+      "hash": k
   }]);
   
     const params = {
